@@ -7,16 +7,11 @@ using System.Threading.Tasks;
 
 namespace ProyectoBarberia.Models
 {
-    internal class Roles
+    public class Roles
     {
-        [Key]
-        public long Id { get; set; }
-
-        [Required]
-        [MaxLength(50)]
+        public int Id { get; set; }
         public string Name { get; set; }
-
-        // Relación
-        public List<Users_roles> UserRoles { get; set; }
+        public string Description { get; set; }
+        public bool Active { get; set; }
     }
 }

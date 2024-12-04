@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoBarberia.Views.Login"
+             BackgroundColor="White">
+    
+    <ContentPage.Content>
+        <VerticalStackLayout
+            Padding="20"
+            Spacing="15"
+            VerticalOptions="Center"
+            HorizontalOptions="Center">
+
+            <Image
+                Source="logo.jpg"
+                HeightRequest="140"
+                WidthRequest="140"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Barbería"
+                FontSize="28"
+                FontAttributes="Bold"
+                TextColor="Black"
+                HorizontalOptions="Center" />
+
+            <Entry
+                x:Name="EmailEntry"
+                Placeholder="Correo electrónico"
+                FontSize="16"
+                Keyboard="Email"
+                Margin="0,5"
+                HorizontalOptions="FillAndExpand"
+                TextColor="Black"
+                HeightRequest="45" />
+
+            <Entry
+                x:Name="PasswordEntry"
+                Placeholder="Contraseña"
+                FontSize="16"
+                IsPassword="True"
+                Margin="0,5"
+                TextColor="Black"
+                HorizontalOptions="FillAndExpand"
+                HeightRequest="45" />
+
+            <Button
+                x:Name="LoginButton"
+                Text="Iniciar Sesión"
+                BackgroundColor="#2196F3"
+                TextColor="White"
+                FontSize="18"
+                CornerRadius="10"
+                HeightRequest="50"
+                WidthRequest="200"
+                HorizontalOptions="Center"
+                Clicked="OnLoginButtonClicked" />
+
+            <Label
+                Text="Crear cuenta"
+                FontSize="16"
+                HorizontalOptions="Center"
+                TextDecorations="Underline"
+                TextColor="Blue">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnCrearCuentaTapped" />
+                </Label.GestureRecognizers>
+            </Label>
+
+        </VerticalStackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoBarberia.Views.Admin.Services"
+             BackgroundColor="White">
+    <ContentPage.Content>
+        <ScrollView>
+            <VerticalStackLayout Padding="10">
+
+                <Button Text="Agregar Servicio"
+                    BackgroundColor="Green"
+                    TextColor="White"
+                    FontSize="16"
+                    Padding="10"
+                    CornerRadius="5"
+                    HorizontalOptions="Fill"
+                    Margin="0, 0, 0, 20"
+                    Clicked="OnAddServiceClicked" />
+
+                <Label Text="Lista de Servicios" 
+                   FontSize="24" 
+                   HorizontalOptions="Center" 
+                   Margin="0,10"
+                   TextColor="Black"/>
+
+                <CollectionView x:Name="ServicesCollectionView">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame Padding="10" Margin="5" BorderColor="LightGray">
+                                <VerticalStackLayout>
+                                    <Label Text="{Binding Name}" FontSize="18" FontAttributes="Bold" />
+                                    <Label Text="{Binding Description}" />
+                                    <Label Text="{Binding Price, StringFormat='{0} $'}" />
+                                    <HorizontalStackLayout Spacing="15">
+                                        <Button Text="Editar"
+                                            BackgroundColor="Blue"
+                                            TextColor="White"
+                                            FontSize="14"
+                                            Padding="5"
+                                            CornerRadius="5"
+                                            CommandParameter="{Binding .}"
+                                            Clicked="OnEditServiceClicked" />
+    
+                                        <Button Text="{Binding ButtonText}"
+                                         BackgroundColor="{Binding ButtonColor}"
+                                         TextColor="White"
+                                         FontSize="14"
+                                         Padding="5"
+                                         CornerRadius="5"
+                                         CommandParameter="{Binding .}"
+                                         Clicked="OnToggleActiveClicked" />
+
+                                    </HorizontalStackLayout>
+                                </VerticalStackLayout>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+            </VerticalStackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

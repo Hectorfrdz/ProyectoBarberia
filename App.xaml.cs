@@ -1,4 +1,6 @@
-﻿namespace ProyectoBarberia
+﻿using ProyectoBarberia.Views;
+
+namespace ProyectoBarberia
 {
     public partial class App : Application
     {

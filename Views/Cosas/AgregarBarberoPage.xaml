@@ -1,0 +1,32 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoBarberia.Views.Admin.AgregarBarberoPage"
+             BackgroundColor="White">
+
+    <ContentPage.Content>
+        <VerticalStackLayout Padding="10">
+            <Label Text="Agregar Barbero"
+                   FontSize="24"
+                   HorizontalOptions="Center"
+                   Margin="0,10"
+                   TextColor="Black"/>
+
+            <Entry Placeholder="Nombre" x:Name="NameEntry" TextColor="Black"/>
+            <Entry Placeholder="Apellido" x:Name="LastNameEntry" TextColor="Black"/>
+            <Entry Placeholder="Correo Electrónico" x:Name="EmailEntry" TextColor="Black"/>
+            <Entry Placeholder="Teléfono" x:Name="PhoneEntry" Keyboard="Telephone" TextColor="Black"/>
+
+            <Button Text="Guardar"
+                    BackgroundColor="Green"
+                    TextColor="White"
+                    CornerRadius="5"
+                    Clicked="OnSaveBarberClicked" />
+
+            <Button Text="Cancelar"
+                    BackgroundColor="Gray"
+                    TextColor="White"
+                    CornerRadius="5"
+                    Clicked="OnCancelClicked" />
+        </VerticalStackLayout>
+    </ContentPage.Content>
+</ContentPage>

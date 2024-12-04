@@ -1,0 +1,39 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoBarberia.Views.Clients.CreateAppointmentPage"
+             BackgroundColor="White">
+
+    <VerticalStackLayout Padding="20" Spacing="20">
+        <!-- Título de la página -->
+        <Label Text="Crear Nueva Cita"
+               FontSize="24"
+               VerticalOptions="Start"
+               HorizontalOptions="Center" 
+               TextColor="Black"/>
+
+        <!-- DatePicker con bordes y color de fondo personalizado -->
+        <DatePicker x:Name="AppointmentDatePicker" 
+                    FontSize="16" 
+                    Date="{Binding AppointmentDate}" 
+                    Format="D"
+                    BackgroundColor="LightGray"
+                    TextColor="Black"/>
+
+        <!-- Picker con estilo similar al DatePicker -->
+        <Picker x:Name="ServicePicker" 
+                Title="Seleccionar Servicio" 
+                FontSize="16"
+                BackgroundColor="LightGray"
+                TextColor="Black"/>
+
+        <!-- Botón con color de fondo y texto contrastante -->
+        <Button Text="Crear Cita"
+                FontSize="18"
+                BackgroundColor="RoyalBlue"
+                TextColor="White"
+                Clicked="OnCreateButtonClicked" 
+                HorizontalOptions="Center"
+                Padding="10"
+                CornerRadius="10"/>
+    </VerticalStackLayout>
+</ContentPage>

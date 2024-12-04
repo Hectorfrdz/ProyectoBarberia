@@ -1,28 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Newtonsoft.Json;
 
 namespace ProyectoBarberia.Models
 {
-    internal class Services
+    public class Service
     {
-        [Key]
-        public long Id { get; set; }
+        public int Id { get; set; }
 
-        [Required]
-        [MaxLength(100)]
+        [JsonProperty("name")]
         public string Name { get; set; }
 
-        [MaxLength(500)]
+        [JsonProperty("description")]
         public string Description { get; set; }
 
-        [Required]
+        [JsonProperty("price")]
         public decimal Price { get; set; }
 
-        // Relación
-        public List<Appointments> Appointments { get; set; }
+        [JsonProperty("active")]
+        public bool Active { get; set; }
+
+        public string ButtonText => Active ? "Desactivar" : "Activar";
+        public Color ButtonColor => Active ? Colors.Red : Colors.Green;
     }
 }

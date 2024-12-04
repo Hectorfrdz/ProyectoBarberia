@@ -4,31 +4,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using Newtonsoft.Json;
 
 namespace ProyectoBarberia.Models
 {
-    internal class Appointments
+    public class Appointment
     {
-        [Key]
-        public long Id { get; set; }
+        public int Id { get; set; }
 
-        [Required]
-        public long UserBarberId { get; set; }
-
-        [Required]
-        public long UserClientId { get; set; }
-
-        [Required]
-        public long ServiceId { get; set; }
-
-        [Required]
+        [JsonProperty("appointment_date")]
         public DateTime AppointmentDate { get; set; }
 
-        public bool Status { get; set; }
+        [JsonProperty("status")]
+        public string Status { get; set; }
+
+        [JsonProperty("active")]
+        public bool Active { get; set; }
 
         // Relaciones
+        [JsonProperty("user_barber")]
         public Users UserBarber { get; set; }
+
+        [JsonProperty("user_customer")]
         public Users UserClient { get; set; }
-        public Services Service { get; set; }
+
+        [JsonProperty("service")]
+        public Service Service { get; set; }
     }
+
 }

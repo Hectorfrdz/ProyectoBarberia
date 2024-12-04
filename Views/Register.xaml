@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoBarberia.Views.Register"
+             BackgroundColor="White">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="10">
+            <Label Text="Registrar Nuevo Usuario" FontSize="Large" HorizontalOptions="Center" TextColor="Black" />
+
+            <Entry x:Name="EmailEntry" Placeholder="Correo Electrónico" Keyboard="Email" TextColor="Black"/>
+            <Entry x:Name="PasswordEntry" Placeholder="Contraseña" TextColor="Black" IsPassword="True"/>
+            <Entry x:Name="UsernameEntry" Placeholder="Nombre de Usuario" TextColor="Black"/>
+            <Entry x:Name="NameEntry" Placeholder="Nombre" TextColor="Black"/>
+            <Entry x:Name="LastnameEntry" Placeholder="Apellido" TextColor="Black"/>
+
+            <Button Text="Guardar Usuario" BackgroundColor="Green" TextColor="White" Clicked="OnSaveUserClicked" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

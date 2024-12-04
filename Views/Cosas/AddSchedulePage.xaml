@@ -1,0 +1,28 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoBarberia.Views.Cosas.AddSchedulePage"
+             Title="Agregar Horario"
+             BackgroundColor="White">
+    
+    <VerticalStackLayout Padding="10">
+        <Label Text="Nuevo Horario" FontSize="24" HorizontalOptions="Center"/>
+
+        <Picker x:Name="DayPicker" Title="Seleccione el día" BackgroundColor="Black"/>
+
+
+        <Label Text="Inicio" TextColor="Black"/>
+        <TimePicker x:Name="StartTimePicker" TextColor="Black"/>
+        <Label Text="Inicio del Descanso" TextColor="Black"/>
+        <TimePicker x:Name="StartRestTimePicker" TextColor="Black"/>
+        <Label Text="Fin del Descanso" TextColor="Black"/>
+        <TimePicker x:Name="EndRestTimePicker" TextColor="Black"/>
+        <Label Text="Fin" TextColor="Black"/>
+        <TimePicker x:Name="EndTimePicker" TextColor="Black"/>
+
+        <Button Text="Guardar" 
+                BackgroundColor="Green" 
+                TextColor="White" 
+                CornerRadius="10" 
+                Clicked="OnSaveScheduleClicked" />
+    </VerticalStackLayout>
+</ContentPage>

@@ -4,31 +4,56 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace ProyectoBarberia.Models
 {
-    internal class Schedules
+    public class Schedules
     {
-        [Key]
-        public long Id { get; set; }
+        [JsonProperty("id")]
+        public int Id { get; set; }
 
-        [Required]
-        public long UserBarberId { get; set; }
+        [JsonProperty("user_barber_id")]
+        public int UserBarberId { get; set; }
 
-        [Required]
-        public DateTime StartTime { get; set; }
+        [JsonProperty("start_time")]
+        public string StartTime { get; set; }
 
-        [Required]
-        public DateTime EndTime { get; set; }
+        [JsonProperty("end_time")]
+        public string EndTime { get; set; }
 
-        public DateTime? StartRestTime { get; set; }
-        public DateTime? EndRestTime { get; set; }
+        [JsonProperty("start_rest_time")]
+        public string StartRestTime { get; set; }
 
-        [Required]
-        [MaxLength(20)]
-        public string Day { get; set; }
+        [JsonProperty("end_rest_time")]
+        public string EndRestTime { get; set; }
 
-        // Relación
-        public Users UserBarber { get; set; }
+        [JsonProperty("day")]
+        public int Day { get; set; }
+
+        [JsonProperty("active")]
+        public bool Active { get; set; }
+        public Users User_Barber { get; set; }
+
+        public string DayName
+        {
+            get
+            {
+                return Day switch
+                {
+                    1 => "Lunes",
+                    2 => "Martes",
+                    3 => "Miércoles",
+                    4 => "Jueves",
+                    5 => "Viernes",
+                    6 => "Sábado",
+                    7 => "Domingo",
+                    _ => "Día inválido",
+                };
+            }
+        }
+        public string ButtonText => Active ? "Desactivar" : "Activar";
+        public Color ButtonColor => Active ? Colors.Red : Colors.Green;
     }
+
 }

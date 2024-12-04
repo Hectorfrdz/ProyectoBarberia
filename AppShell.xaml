@@ -1,15 +1,56 @@
-<?xml version="1.0" encoding="UTF-8" ?>
 <Shell
     x:Class="ProyectoBarberia.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:ProyectoBarberia"
-    Shell.FlyoutBehavior="Disabled"
-    Title="ProyectoBarberia">
+    Shell.FlyoutBehavior="Disabled">
 
     <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        ContentTemplate="{DataTemplate local:Views.Login}"
+        Route="LoginPage" />
+
+    <ShellContent
+        ContentTemplate="{DataTemplate local:Views.Register}"
+        Route="RegisterPage" />
+
+    <!-- TabBar para Clientes -->
+    <TabBar x:Name="ClientTabBar" Route="Client">
+        <Tab Title="Citas Pendientes">
+            <ShellContent ContentTemplate="{DataTemplate local:Views.Clients.Appointments}" />
+        </Tab>
+        <Tab Title="Historial">
+            <ShellContent ContentTemplate="{DataTemplate local:Views.Clients.Historial}" />
+        </Tab>
+    </TabBar>
+
+    <!-- TabBar para Barberos -->
+    <TabBar x:Name="BarberTabBar" Route="Barber">
+        <Tab Title="Agenda">
+            <ShellContent ContentTemplate="{DataTemplate local:Views.Barbers.Appointments}" />
+        </Tab>
+        <Tab Title="Horarios">
+            <ShellContent ContentTemplate="{DataTemplate local:Views.Barbers.Schedules}" />
+        </Tab>
+    </TabBar>
+
+    <!-- TabBar para Admin -->
+    <TabBar x:Name="AdminTabBar" Route="Admin">
+        <Tab Title="Citas Pendientes">
+            <ShellContent ContentTemplate="{DataTemplate local:Views.Admin.Appointments}" />
+        </Tab>
+        <Tab Title="Barberos">
+            <ShellContent ContentTemplate="{DataTemplate local:Views.Admin.Calendario}" />
+        </Tab>
+        <Tab Title="Servicios">
+            <ShellContent ContentTemplate="{DataTemplate local:Views.Admin.Services}" />
+        </Tab>
+    </TabBar>
+
+    <Shell.ToolbarItems>
+        <ToolbarItem
+        x:Name="LogoutToolbarItem"
+        Text="Cerrar Sesión"
+        Clicked="OnLogoutClicked" />
+    </Shell.ToolbarItems>
 
 </Shell>

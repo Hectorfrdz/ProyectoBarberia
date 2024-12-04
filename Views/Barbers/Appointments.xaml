@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoBarberia.Views.Barbers.Appointments"
+             BackgroundColor="White">
+    <ScrollView>
+        <VerticalStackLayout Padding="20">
+
+            <Label Text="Citas Pendientes"
+               FontSize="24"
+               VerticalOptions="Start"
+               HorizontalOptions="Center" 
+               TextColor="Black"/>
+
+            <CollectionView x:Name="AppointmentsCollectionView" ItemsSource="{Binding AppointmentsList}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BorderColor="Gray" Padding="10" Margin="5">
+                            <VerticalStackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Fecha:" FontSize="14" HorizontalOptions="Start" />
+                                    <Label Text="{Binding AppointmentDate, StringFormat='{0:yyyy-MM-dd}'}" FontSize="16" HorizontalOptions="EndAndExpand" />
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Estado:" FontSize="14" HorizontalOptions="Start" />
+                                    <Label Text="{Binding Status}" FontSize="16" HorizontalOptions="EndAndExpand" />
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Servicio:" FontSize="14" HorizontalOptions="Start" />
+                                    <Label Text="{Binding Service.Name}" FontSize="16" HorizontalOptions="EndAndExpand" />
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Barbero:" FontSize="14" HorizontalOptions="Start" />
+                                    <Label Text="{Binding UserBarber.Name}" FontSize="16" HorizontalOptions="EndAndExpand" />
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Cliente:" FontSize="14" HorizontalOptions="Start" />
+                                    <Label Text="{Binding UserClient.Name}" FontSize="16" HorizontalOptions="EndAndExpand" />
+                                </StackLayout>
+
+                                <Button Text="Terminar Cita" 
+                                    BackgroundColor="Green" 
+                                    TextColor="White" 
+                                    Clicked="OnAceptAppointmentClicked" 
+                                    HorizontalOptions="Center" />
+                            </VerticalStackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
