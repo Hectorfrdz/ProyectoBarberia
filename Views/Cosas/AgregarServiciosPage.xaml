@@ -2,26 +2,27 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoBarberia.Views.Cosas.AgregarServiciosPage"
-             Title="Agregar Servicio">
+             Title="Agregar Servicio"
+             BackgroundColor="White">
     <ScrollView>
         <VerticalStackLayout Spacing="20" Padding="20">
             <Label Text="Agregar Nuevo Servicio"
                    FontSize="24"
-                   HorizontalOptions="Center" />
+                   HorizontalOptions="Center" TextColor="Black"/>
 
-            <Label Text="Nombre del Servicio" />
+            <Label Text="Nombre del Servicio" TextColor="Black"/>
             <Entry x:Name="NameEntry"
-                   Placeholder="Ingrese el nombre del servicio" />
+                   Placeholder="Ingrese el nombre del servicio" TextColor="Black"/>
 
-            <Label Text="Descripción" />
+            <Label Text="Descripción" TextColor="Black"/>
             <Editor x:Name="DescriptionEditor"
                     Placeholder="Ingrese una descripción"
-                    AutoSize="TextChanges" />
+                    AutoSize="TextChanges" TextColor="Black"/>
 
-            <Label Text="Precio" />
+            <Label Text="Precio" TextColor="Black"/>
             <Entry x:Name="PriceEntry"
                    Placeholder="Ingrese el precio"
-                   Keyboard="Numeric" />
+                   Keyboard="Numeric" TextColor="Black"/>
 
             <Button Text="Guardar Servicio"
                     BackgroundColor="Green"
